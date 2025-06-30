@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../hooks/useScrollDirection';
-import logoImage from '../data/logo/Color logo - no background.png';
+import { GraduationCap } from 'lucide-react';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,26 +13,22 @@ const Navbar = () => {
   }, []);
 
   const handleLogoClick = () => {
-    // Clear any stored selections when navigating home
-    localStorage.removeItem('selectedAssistants');
-    localStorage.removeItem('formData');
-    localStorage.removeItem('specificRequest');
     navigate('/');
   };
 
-  const scrollToFooter = () => {
+  const scrollToSection = (sectionId: string) => {
     if (window.location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
-        const footer = document.getElementById('contact');
-        if (footer) {
-          footer.scrollIntoView({ behavior: 'smooth' });
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     } else {
-      const footer = document.getElementById('contact');
-      if (footer) {
-        footer.scrollIntoView({ behavior: 'smooth' });
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -47,35 +43,42 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <button 
             onClick={handleLogoClick} 
-            className="text-white hover:text-gray-300 transition-colors flex items-center"
+            className="text-white hover:text-gray-300 transition-colors flex items-center space-x-3"
           >
-            <img src={logoImage} alt="Xerobro Logo" className="h-16" />
+            <GraduationCap className="h-8 w-8" />
+            <span className="text-xl font-bold">StudienPrep</span>
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => navigate('/about')}
+              onClick={() => scrollToSection('services')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Om oss
+              Services
             </button>
             <button 
-              onClick={() => navigate('/security')}
+              onClick={() => scrollToSection('testimonials')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Säkerhet
+              Testimonials
             </button>
             <button 
-              onClick={scrollToFooter}
+              onClick={() => navigate('/faq')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Kontakt
+              FAQ
             </button>
             <button 
-              onClick={() => navigate('/ai-assistants')}
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Contact
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
               className="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/20 transition-colors border border-white/20"
             >
-              Boka demo
+              Free Assessment
             </button>
           </div>
         </div>

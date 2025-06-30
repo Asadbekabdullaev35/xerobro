@@ -5,33 +5,16 @@ import PageTransition from './components/PageTransition';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import SeamlessIntegration from './components/SeamlessIntegration';
-import MobileInteraction from './components/MobileInteraction';
-import Solutions from './components/Solutions';
-import AIAssistants from './components/AIAssistants';
-import Technologies from './components/Technologies';
+import CoreServices from './components/CoreServices';
+import HowItWorks from './components/HowItWorks';
+import Testimonials from './components/Testimonials';
+import WhyUs from './components/WhyUs';
+import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
-import Impressum from './components/Impressum';
-import DeploymentForm from './components/DeploymentForm';
-import SolutionSelector from './components/SolutionSelector';
-import Security from './components/Security';
-import AboutUs from './components/AboutUs';
-import AIAssistantSelector from './components/AIAssistantSelector';
-import AnnaDetails from './components/assistant-details/AnnaDetails';
-import JohnDetails from './components/assistant-details/JohnDetails';
-import MiraDetails from './components/assistant-details/MiraDetails';
-import LeadCaptureDetails from './components/solution-details/LeadCaptureDetails';
-import CrmIntegrationDetails from './components/solution-details/CrmIntegrationDetails';
-import SmartSchedulingDetails from './components/solution-details/SmartSchedulingDetails';
-import CustomerSupportDetails from './components/solution-details/CustomerSupportDetails';
-import SocialMediaAutomationDetails from './components/solution-details/SocialMediaAutomationDetails';
-import OrderFlowDetails from './components/solution-details/OrderFlowDetails';
-import AICallCenterDetails from './components/solution-details/AICallCenterDetails';
-import ChatbotDetails from './components/solution-details/ChatbotDetails';
-import HRRecruitmentDetails from './components/solution-details/HRRecruitmentDetails';
-import SalesCoachDetails from './components/solution-details/SalesCoachDetails';
+import Services from './components/Services';
+import FAQ from './components/FAQ';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -82,11 +65,11 @@ function MainLayout() {
         <Navbar />
         <Hero />
         <About />
-        <SeamlessIntegration />
-        <MobileInteraction />
-        <AIAssistants />
-        <Solutions />
-        <Technologies />
+        <CoreServices />
+        <HowItWorks />
+        <Testimonials />
+        <WhyUs />
+        <ContactForm />
         <Footer />
       </div>
     </div>
@@ -100,27 +83,10 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><MainLayout /></PageTransition>} />
+        <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+        <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
         <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
         <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
-        <Route path="/impressum" element={<PageTransition><Impressum /></PageTransition>} />
-        <Route path="/deploy" element={<PageTransition><DeploymentForm /></PageTransition>} />
-        <Route path="/solutions" element={<PageTransition><SolutionSelector /></PageTransition>} />
-        <Route path="/security" element={<PageTransition><Security /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><AboutUs /></PageTransition>} />
-        <Route path="/ai-assistants" element={<PageTransition><AIAssistantSelector /></PageTransition>} />
-        <Route path="/anna-details" element={<PageTransition><AnnaDetails /></PageTransition>} />
-        <Route path="/john-details" element={<PageTransition><JohnDetails /></PageTransition>} />
-        <Route path="/mira-details" element={<PageTransition><MiraDetails /></PageTransition>} />
-        <Route path="/lead-capture-details" element={<PageTransition><LeadCaptureDetails /></PageTransition>} />
-        <Route path="/crm-integration-details" element={<PageTransition><CrmIntegrationDetails /></PageTransition>} />
-        <Route path="/smart-scheduling-details" element={<PageTransition><SmartSchedulingDetails /></PageTransition>} />
-        <Route path="/customer-support-ai-details" element={<PageTransition><CustomerSupportDetails /></PageTransition>} />
-        <Route path="/social-media-automation-details" element={<PageTransition><SocialMediaAutomationDetails /></PageTransition>} />
-        <Route path="/order-flow-details" element={<PageTransition><OrderFlowDetails /></PageTransition>} />
-        <Route path="/ai-call-center-details" element={<PageTransition><AICallCenterDetails /></PageTransition>} />
-        <Route path="/chatbot-details" element={<PageTransition><ChatbotDetails /></PageTransition>} />
-        <Route path="/hr-recruitment-details" element={<PageTransition><HRRecruitmentDetails /></PageTransition>} />
-        <Route path="/sales-coach-details" element={<PageTransition><SalesCoachDetails /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

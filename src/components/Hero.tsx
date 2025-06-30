@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Calculator } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,8 +45,15 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div id="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48"> {/* Added pb-48 for more bottom padding */}
+    <div id="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left space-y-8">
@@ -54,13 +61,13 @@ const Hero = () => {
               <div className="relative h-[180px] md:h-[150px]">
                 <TypeAnimation
                   sequence={[
-                    'Automatiserar Affärslogik',
+                    'Master Your Studienkolleg Entrance Exams',
                     2000,
-                    'Optimerar Arbetsflöden',
+                    'Ace German University Prep',
                     2000,
-                    'Maximerar Effektivitet',
+                    'Secure Your Academic Future',
                     2000,
-                    'Skalar Verksamheter',
+                    'Excel in Math & German',
                     2000,
                   ]}
                   wrapper="div"
@@ -72,15 +79,15 @@ const Hero = () => {
             </h1>
 
             <p className="text-gray-400 text-lg max-w-xl header-animate opacity-0 transform translate-y-8">
-              Utnyttja kraften i AI för att transformera dina affärsprocesser och driva innovation framåt.
+              Expert Math & German test prep to secure your spot in a German university Studienkolleg. Join hundreds of successful students who achieved their dreams.
             </p>
 
             <div className="flex justify-center lg:justify-start header-animate opacity-0 transform translate-y-8">
               <button 
-                onClick={() => navigate('/deploy')}
+                onClick={scrollToContact}
                 className="group bg-white text-black px-8 py-4 rounded-lg font-mono hover:bg-gray-100 transition-all flex items-center justify-center border border-white/50 glow-md hover-glow"
               >
-                ./deploy.sh <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Start Your Free Assessment <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -92,31 +99,22 @@ const Hero = () => {
                   <div className="h-3 w-3 rounded-full bg-red-500" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500" />
                   <div className="h-3 w-3 rounded-full bg-green-500" />
-                  <span className="ml-2 text-sm text-gray-400 font-mono">~/xerobro/init.sh</span>
+                  <span className="ml-2 text-sm text-gray-400 font-mono">~/studienkolleg/prep.sh</span>
                 </div>
               </div>
 
-              <div className="p-4 font-mono text-sm h-[250px]">
-                <div className="relative h-full">
-                  <TypeAnimation
-                    sequence={[
-                      '> Initierar kärna...\n',
-                      1000,
-                      '> Initierar kärna...\n> Laddar system...\n',
-                      1000,
-                      '> Initierar kärna...\n> Laddar system...\n> Konfigurerar parametrar...\n',
-                      1000,
-                      '> Initierar kärna...\n> Laddar system...\n> Konfigurerar parametrar...\n> System redo.\n',
-                      1000,
-                    ]}
-                    wrapper="pre"
-                    speed={50}
-                    className="text-white/80 whitespace-pre-wrap absolute top-0 left-0"
-                    repeat={1}
-                  />
-                  <div className="text-white/80 absolute bottom-0 left-0">
-                    $ <span className="animate-pulse">_</span>
-                  </div>
+              <div className="p-4 font-mono text-sm h-[250px] flex flex-col justify-center items-center space-y-6">
+                <div className="flex items-center space-x-4">
+                  <Calculator className="h-12 w-12 text-blue-400 animate-bounce" />
+                  <span className="text-2xl text-white">+</span>
+                  <BookOpen className="h-12 w-12 text-green-400 animate-bounce" style={{ animationDelay: '0.5s' }} />
+                </div>
+                <div className="text-center">
+                  <div className="text-white/80 mb-2">Math + German = Success</div>
+                  <div className="text-green-400 text-sm">✓ Studienkolleg Ready</div>
+                </div>
+                <div className="text-white/80 absolute bottom-4 left-4">
+                  $ <span className="animate-pulse">_</span>
                 </div>
               </div>
             </div>

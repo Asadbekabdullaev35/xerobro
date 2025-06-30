@@ -4,40 +4,11 @@ import PageHeader from './PageHeader';
 const PrivacyPolicy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Function to create a shooting star
-    const createShootingStar = () => {
-      const star = document.createElement('div');
-      star.className = 'shooting-star';
-      
-      // Random starting position in top 30% of screen
-      const startPos = Math.random() * 30;
-      star.style.top = `${startPos}%`;
-      star.style.right = '-50px';
-      
-      const duration = 1.5 + Math.random() * 0.5;
-      star.style.animation = `shooting-star-animation ${duration}s linear`;
-
-      document.getElementById('privacy-policy')?.appendChild(star);
-
-      star.addEventListener('animationend', () => {
-        star.remove();
-      });
-    };
-
-    // Create shooting stars at random intervals
-    const interval = setInterval(() => {
-      if (Math.random() > 0.85) {
-        createShootingStar();
-      }
-    }, 2000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div id="privacy-policy" className="min-h-screen bg-black text-white relative overflow-hidden">
-      <PageHeader title="Integritetspolicy" />
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      <PageHeader title="Privacy Policy" />
       <div className="pt-32 pb-24">
         <div className="absolute inset-0 bg-black">
           <div className="absolute inset-0"
@@ -69,150 +40,126 @@ const PrivacyPolicy = () => {
         <div className="grid-animation absolute inset-0" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="prose prose-invert">
-            <h1 className="text-4xl font-bold mb-8 font-mono">Integritetspolicy</h1>
+            <h1 className="text-4xl font-bold mb-8 font-mono">Privacy Policy</h1>
             
             <p className="text-gray-300 mb-8">
-              Xerobro ("vi", "oss" eller "vår") är engagerade i att skydda din personliga datas integritet och säkerhet. Denna integritetspolicy förklarar hur vi samlar in, använder och behandlar din information när du gör en beställning hos oss.
+              StudienPrep ("we", "us" or "our") is committed to protecting your personal data privacy and security. This privacy policy explains how we collect, use and process your information when you use our services.
             </p>
 
             <p className="text-gray-300 mb-8">
-              Vi behandlar dina personuppgifter i enlighet med den allmänna dataskyddsförordningen (GDPR) (EU) 2016/679 och andra tillämpliga dataskyddslagar.
+              We process your personal data in accordance with the General Data Protection Regulation (GDPR) (EU) 2016/679 and other applicable data protection laws.
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">1. Personuppgiftsansvarig</h2>
+              <h2 className="text-2xl font-bold mb-4">1. Data Controller</h2>
               <p className="text-gray-300 mb-4">
-                Den personuppgiftsansvarige för behandlingen av dina personuppgifter är:
+                The data controller for the processing of your personal data is:
               </p>
               <p className="text-gray-300 mb-4">
-                Xerobro
+                StudienPrep<br />
+                Berlin, Germany
               </p>
               <p className="text-gray-300 mb-4">
-                📧 E-post: info@xerobro.com
+                📧 Email: info@studienprep.com
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">2. Information vi samlar in</h2>
+              <h2 className="text-2xl font-bold mb-4">2. Information We Collect</h2>
               
-              <h3 className="text-xl font-semibold mb-2">2.1. Personuppgifter</h3>
+              <h3 className="text-xl font-semibold mb-2">2.1. Personal Data</h3>
               <p className="text-gray-300 mb-4">
-                Vi samlar in och behandlar följande personuppgifter när du gör en beställning:
+                We collect and process the following personal data when you use our services:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>Kontaktinformation: Namn, e-postadress, telefonnummer (om frivilligt tillhandahållet).</li>
-                <li>Beställningsinformation: Information om de produkter eller tjänster du begär.</li>
-                <li>Betalningsinformation: Betalningsuppgifter behandlas säkert av externa betalningsleverantörer (vi lagrar inte betalningsinformation).</li>
+                <li>Contact information: Name, email address, phone number</li>
+                <li>Educational information: Current education level, academic goals</li>
+                <li>Service information: Information about the services you request</li>
+                <li>Communication data: Messages and correspondence with our team</li>
               </ul>
 
-              <h3 className="text-xl font-semibold mb-2">2.2. Inga cookies eller spårningsteknologier</h3>
+              <h3 className="text-xl font-semibold mb-2">2.2. Legal Basis for Processing</h3>
               <p className="text-gray-300 mb-4">
-                Vi använder inte cookies, spårningsverktyg eller liknande teknologier för att samla in personuppgifter.
-              </p>
-
-              <h3 className="text-xl font-semibold mb-2">2.3. Rättslig grund för behandling</h3>
-              <p className="text-gray-300 mb-4">
-                Vi behandlar dina personuppgifter baserat på följande rättsliga grunder enligt artikel 6 i GDPR:
+                We process your personal data based on the following legal grounds under Article 6 of GDPR:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>Fullgörande av avtal (Art. 6(1)(b) GDPR) – Behandling är nödvändig för att fullgöra din beställning.</li>
-                <li>Berättigade intressen (Art. 6(1)(f) GDPR) – För att säkerställa att våra tjänster fungerar korrekt.</li>
-                <li>Rättsliga skyldigheter (Art. 6(1)(c) GDPR) – För att följa tillämpliga lagar och regler.</li>
+                <li>Performance of contract (Art. 6(1)(b) GDPR) – Processing is necessary to fulfill your service request</li>
+                <li>Legitimate interests (Art. 6(1)(f) GDPR) – To ensure our services function properly</li>
+                <li>Legal obligations (Art. 6(1)(c) GDPR) – To comply with applicable laws and regulations</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">3. Hur vi använder din information</h2>
+              <h2 className="text-2xl font-bold mb-4">3. How We Use Your Information</h2>
               <p className="text-gray-300 mb-4">
-                Vi använder de insamlade uppgifterna för följande ändamål:
+                We use the collected data for the following purposes:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>För att behandla din beställning – Säkerställa orderhantering och kundkommunikation.</li>
-                <li>För att tillhandahålla kundsupport – Svara på förfrågningar och lösa problem.</li>
-                <li>För att uppfylla juridiska krav – Till exempel skatteregler och bedrägeribekämpning.</li>
+                <li>To provide educational services and support</li>
+                <li>To communicate with you about your progress and services</li>
+                <li>To improve our services and educational programs</li>
+                <li>To comply with legal requirements</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">4. Behandling av uppgifter av tredje part</h2>
-              
-              <h3 className="text-xl font-semibold mb-2">4.1. Externa tjänsteleverantörer</h3>
-              <p className="text-gray-300 mb-4">
-                Vi lagrar inte kunddata på våra egna servrar. Istället behandlas uppgifter av tredjepartsleverantörer som hanterar orderhantering, betalningsprocesser och tjänsteleverans. Dessa leverantörer är baserade inom Europeiska unionen (EU) och USA.
-              </p>
-
-              <h3 className="text-xl font-semibold mb-2">4.2. Internationella dataöverföringar</h3>
-              <p className="text-gray-300 mb-4">
-                Vissa personuppgifter kan överföras utanför Europeiska ekonomiska samarbetsområdet (EES) (t.ex. till USA). Vi säkerställer att lämpliga skyddsåtgärder finns på plats, inklusive:
-              </p>
+              <h2 className="text-2xl font-bold mb-4">4. Data Storage and Deletion</h2>
+              <p className="text-gray-300 mb-4">We store your data only as long as necessary:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>EU:s standardavtalsklausuler (SCCs)</li>
-                <li>Tillräcklighetsbeslut från Europeiska kommissionen</li>
-                <li>Databehandlingsavtal (DPA) med strikta sekretesskrav</li>
+                <li>Service data: Stored for the duration of our service relationship</li>
+                <li>Communication data: Deleted after the matter has been resolved, unless required by law</li>
+                <li>Marketing data: Stored until you withdraw consent</li>
               </ul>
               <p className="text-gray-300 mb-4">
-                En lista över tredjepartsleverantörer och deras dataskyddspolicyer kan tillhandahållas på begäran.
+                You can request deletion of your data at any time (see section 5).
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">5. Lagring och radering av data</h2>
-              <p className="text-gray-300 mb-4">Vi lagrar inte kunddata långsiktigt.</p>
-              <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>Beställningsdata: Lagrade endast så länge som krävs av våra tredjepartsleverantörer.</li>
-                <li>Betalningsdata: Lagras inte av oss, utan endast av den externa betalningsleverantören.</li>
-                <li>Kommunikationsdata: Raderas efter att ärendet har behandlats, om det inte krävs enligt lag.</li>
-              </ul>
+              <h2 className="text-2xl font-bold mb-4">5. Your Rights Under GDPR</h2>
               <p className="text-gray-300 mb-4">
-                Du kan när som helst begära radering av dina uppgifter (se avsnitt 6).
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">6. Dina rättigheter enligt GDPR</h2>
-              <p className="text-gray-300 mb-4">
-                Enligt den allmänna dataskyddsförordningen (GDPR) har du följande rättigheter gällande dina personuppgifter:
+                Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>Rätt till tillgång – Begära en kopia av de personuppgifter vi lagrar om dig.</li>
-                <li>Rätt till rättelse – Begära korrigering av felaktiga eller ofullständiga uppgifter.</li>
-                <li>Rätt till radering ("rätten att bli bortglömd") – Begära att dina personuppgifter raderas.</li>
-                <li>Rätt till begränsning av behandling – Begära att vi begränsar hur vi använder dina uppgifter.</li>
-                <li>Rätt till dataportabilitet – Få dina uppgifter i ett strukturerat format.</li>
-                <li>Rätt att invända – Invända mot behandling baserat på berättigade intressen.</li>
-                <li>Rätt att återkalla samtycke – Om behandlingen baseras på samtycke kan du återkalla det när som helst.</li>
+                <li>Right of access – Request a copy of the personal data we store about you</li>
+                <li>Right to rectification – Request correction of inaccurate or incomplete data</li>
+                <li>Right to erasure ("right to be forgotten") – Request deletion of your personal data</li>
+                <li>Right to restrict processing – Request that we limit how we use your data</li>
+                <li>Right to data portability – Receive your data in a structured format</li>
+                <li>Right to object – Object to processing based on legitimate interests</li>
+                <li>Right to withdraw consent – If processing is based on consent, you can withdraw it at any time</li>
               </ul>
 
-              <h3 className="text-xl font-semibold mb-2">Hur du utövar dina rättigheter</h3>
+              <h3 className="text-xl font-semibold mb-2">How to Exercise Your Rights</h3>
               <p className="text-gray-300 mb-4">
-                För att utöva någon av dessa rättigheter, vänligen kontakta oss på:
+                To exercise any of these rights, please contact us at:
               </p>
               <p className="text-gray-300 mb-4">
-                📧 info@xerobro.com
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">7. Klagomål</h2>
-              <p className="text-gray-300 mb-4">
-                Om du anser att din personliga data behandlas på ett olagligt sätt har du rätt att lämna in ett klagomål till din lokala dataskyddsmyndighet.
+                📧 info@studienprep.com
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">8. Ändringar i denna integritetspolicy</h2>
+              <h2 className="text-2xl font-bold mb-4">6. Complaints</h2>
               <p className="text-gray-300 mb-4">
-                Vi förbehåller oss rätten att uppdatera denna integritetspolicy när som helst. Uppdateringar publiceras på denna sida med ett reviderat "Senast uppdaterad"-datum.
+                If you believe your personal data is being processed unlawfully, you have the right to file a complaint with your local data protection authority.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">9. Kontaktinformation</h2>
+              <h2 className="text-2xl font-bold mb-4">7. Changes to This Privacy Policy</h2>
               <p className="text-gray-300 mb-4">
-                För frågor eller funderingar gällande denna integritetspolicy, vänligen kontakta oss på:
+                We reserve the right to update this privacy policy at any time. Updates will be posted on this page with a revised "Last updated" date.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">8. Contact Information</h2>
+              <p className="text-gray-300 mb-4">
+                For questions or concerns regarding this privacy policy, please contact us at:
               </p>
               <p className="text-gray-300">
-                📧 info@xerobro.com
+                📧 info@studienprep.com
               </p>
             </section>
           </div>

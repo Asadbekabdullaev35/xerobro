@@ -4,40 +4,11 @@ import PageHeader from './PageHeader';
 const TermsOfService = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Function to create a shooting star
-    const createShootingStar = () => {
-      const star = document.createElement('div');
-      star.className = 'shooting-star';
-      
-      // Random starting position in top 30% of screen
-      const startPos = Math.random() * 30;
-      star.style.top = `${startPos}%`;
-      star.style.right = '-50px';
-      
-      const duration = 1.5 + Math.random() * 0.5;
-      star.style.animation = `shooting-star-animation ${duration}s linear`;
-
-      document.getElementById('terms-of-service')?.appendChild(star);
-
-      star.addEventListener('animationend', () => {
-        star.remove();
-      });
-    };
-
-    // Create shooting stars at random intervals
-    const interval = setInterval(() => {
-      if (Math.random() > 0.85) {
-        createShootingStar();
-      }
-    }, 2000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div id="terms-of-service" className="min-h-screen bg-black text-white relative overflow-hidden">
-      <PageHeader title="Användarvillkor" />
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      <PageHeader title="Terms of Service" />
       <div className="pt-32 pb-24">
         <div className="absolute inset-0 bg-black">
           <div className="absolute inset-0"
@@ -69,84 +40,85 @@ const TermsOfService = () => {
         <div className="grid-animation absolute inset-0" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="prose prose-invert">
-            <h1 className="text-4xl font-bold mb-8 font-mono">Användarvillkor</h1>
-            <p className="text-gray-300 mb-4">Giltig från: 20 mars 2025</p>
+            <h1 className="text-4xl font-bold mb-8 font-mono">Terms of Service</h1>
+            <p className="text-gray-300 mb-4">Effective Date: {new Date().toLocaleDateString()}</p>
             
             <p className="text-gray-300 mb-8">
-              Dessa användarvillkor (härefter "Villkor") reglerar affärsrelationen mellan Xerobro, representerat av Alish Kazimov (härefter "vi", "oss" eller "Xerobro"), och användare av våra tjänster (härefter "Kund" eller "du"). Dessa Villkor gäller för alla beställningar och avtal som ingås via webbplatsen xerobro.se. Vi erbjuder skräddarsydda AI-drivna automatiseringstjänster, inklusive men inte begränsat till chatbots, callcenter-automatisering och mer.
+              These Terms of Service ("Terms") govern the business relationship between StudienPrep ("we", "us" or "StudienPrep"), and users of our services ("Customer" or "you"). These Terms apply to all orders and agreements made through our website and services. We offer customized educational preparation services for German Studienkolleg entrance exams.
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">1. Tillämpningsområde</h2>
-              <p className="text-gray-300 mb-4">1.1. Dessa Villkor gäller för alla beställningar av tjänster som görs via webbplatsen xerobro.se och omfattar både kunder inom och utanför Europeiska unionen.</p>
-              <p className="text-gray-300 mb-4">1.2. Dessa Villkor är en del av avtalet mellan Xerobro och Kunden, oavsett om Kunden är en konsument eller ett företag.</p>
+              <h2 className="text-2xl font-bold mb-4">1. Scope of Application</h2>
+              <p className="text-gray-300 mb-4">1.1. These Terms apply to all service orders made through StudienPrep and cover both customers within and outside the European Union.</p>
+              <p className="text-gray-300 mb-4">1.2. These Terms are part of the agreement between StudienPrep and the Customer, regardless of whether the Customer is a consumer or a business.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">2. Avtalets ingående</h2>
-              <p className="text-gray-300 mb-4">2.1. Ett avtal mellan Xerobro och Kunden ingås när Kunden lägger en beställning via webbplatsen och Xerobro accepterar beställningen. Registrering krävs inte.</p>
-              <p className="text-gray-300 mb-4">2.2. Beställningen accepteras genom att tjänsten tillhandahålls eller genom en uttrycklig bekräftelse från Xerobro.</p>
+              <h2 className="text-2xl font-bold mb-4">2. Contract Formation</h2>
+              <p className="text-gray-300 mb-4">2.1. A contract between StudienPrep and the Customer is formed when the Customer places an order and StudienPrep accepts the order. Registration is not required.</p>
+              <p className="text-gray-300 mb-4">2.2. The order is accepted by providing the service or through explicit confirmation from StudienPrep.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">3. Tjänster</h2>
-              <p className="text-gray-300 mb-4">3.1. Xerobro erbjuder skräddarsydda AI-drivna automatiseringstjänster, inklusive:</p>
+              <h2 className="text-2xl font-bold mb-4">3. Services</h2>
+              <p className="text-gray-300 mb-4">3.1. StudienPrep offers customized educational preparation services, including:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>AI-chatbots</li>
-                <li>AI-Telegram-bots</li>
-                <li>Webbutveckling</li>
-                <li>Sociala medier-automatisering (Instagram, Facebook)</li>
-                <li>Automatiserad X-hantering</li>
-                <li>E-handel automatisering</li>
-                <li>AI-Outreach-system</li>
-                <li>AI-drivna callcenter</li>
+                <li>Mathematics exam coaching</li>
+                <li>German language training</li>
+                <li>Mock tests and performance feedback</li>
+                <li>University application support (optional)</li>
+                <li>Study planning and guidance</li>
               </ul>
-              <p className="text-gray-300 mb-4">3.2. Alla tjänster anpassas individuellt efter Kundens behov. Framgång beror på Kundens användning och implementering.</p>
-              <p className="text-gray-300 mb-4">3.3. Ingen garanti för framgång ges, eftersom resultatet beror på hur Kunden använder de tillhandahållna verktygen.</p>
+              <p className="text-gray-300 mb-4">3.2. All services are customized individually according to the Customer's needs. Success depends on the Customer's usage and implementation.</p>
+              <p className="text-gray-300 mb-4">3.3. No guarantee of success is given, as results depend on how the Customer uses the provided educational tools and guidance.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">4. Priser och betalning</h2>
-              <p className="text-gray-300 mb-4">4.1. Priser anges på webbplatsen xerobro.se och anges i amerikanska dollar (USD), exklusive moms om inget annat anges.</p>
-              <p className="text-gray-300 mb-4">4.2. Betalning sker genom Xerobros godkända betalningsmetoder. Kunden förbinder sig att betala hela beloppet vid beställning. Det finns inga prenumerationer eller återkommande betalningar, förutom för tjänster med månatliga avtal.</p>
-              <p className="text-gray-300 mb-4">4.3. Betalning för engångstjänster (t.ex. chatbots, webbsidor) ska ske i sin helhet vid beställning.</p>
-              <p className="text-gray-300 mb-4">4.4. För månatliga tjänster (t.ex. callcenter) måste Kunden säga upp avtalet minst en vecka före månadens slut för att undvika automatisk förlängning.</p>
+              <h2 className="text-2xl font-bold mb-4">4. Pricing and Payment</h2>
+              <p className="text-gray-300 mb-4">4.1. Prices are specified during consultation and are quoted in Euros (EUR), excluding VAT unless otherwise stated.</p>
+              <p className="text-gray-300 mb-4">4.2. Payment is made through StudienPrep's approved payment methods. The Customer commits to paying the full amount upon order confirmation.</p>
+              <p className="text-gray-300 mb-4">4.3. Payment for one-time services (e.g., assessment, specific courses) must be made in full upon ordering.</p>
+              <p className="text-gray-300 mb-4">4.4. For ongoing services, the Customer must cancel the agreement at least one week before the end of the billing period to avoid automatic renewal.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">5. Ångerrätt och återbetalning</h2>
-              <p className="text-gray-300 mb-4">5.1. Eftersom tjänsterna är digitala och skräddarsydda gäller ingen lagstadgad ångerrätt. Återbetalningar görs endast vid fel från Xerobro.</p>
-              <p className="text-gray-300 mb-4">5.2. Vid fel från Xerobro erbjuds antingen en gratis reparation eller återbetalning.</p>
-              <p className="text-gray-300 mb-4">5.3. Månatliga avtal kan endast sägas upp innan månaden är slut. Uppsägning ska ske minst en vecka före månadens slut.</p>
+              <h2 className="text-2xl font-bold mb-4">5. Right of Withdrawal and Refunds</h2>
+              <p className="text-gray-300 mb-4">5.1. Since services are educational and customized, no statutory right of withdrawal applies. Refunds are only made in case of errors by StudienPrep.</p>
+              <p className="text-gray-300 mb-4">5.2. In case of errors by StudienPrep, either a free correction or refund is offered.</p>
+              <p className="text-gray-300 mb-4">5.3. Ongoing agreements can only be cancelled before the end of the billing period. Cancellation must be made at least one week before the period ends.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">6. Ansvar och garanti</h2>
-              <p className="text-gray-300 mb-4">6.1. Xerobro ansvarar endast för fel om de orsakats av oss. Vi garanterar inte specifika resultat.</p>
-              <p className="text-gray-300 mb-4">6.2. Ansvarsbegränsning: Vi ansvarar endast för skador vid uppsåt eller grov vårdslöshet, och ansvaret är begränsat till det belopp som betalats för tjänsten.</p>
+              <h2 className="text-2xl font-bold mb-4">6. Liability and Warranty</h2>
+              <p className="text-gray-300 mb-4">6.1. StudienPrep is only liable for errors if they are caused by us. We do not guarantee specific results.</p>
+              <p className="text-gray-300 mb-4">6.2. Liability limitation: We are only liable for damages in case of intent or gross negligence, and liability is limited to the amount paid for the service.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">7. Dataskydd</h2>
-              <p className="text-gray-300 mb-4">7.1. Xerobro behandlar personuppgifter i enlighet med GDPR och andra gällande dataskyddslagar.</p>
-              <p className="text-gray-300 mb-4">7.2. Vi samarbetar med tredjepartsleverantörer för AI-tjänster. Dessa följer relevanta dataskyddsregler.</p>
-              <p className="text-gray-300 mb-4">7.3. Vi vidtar tekniska och organisatoriska åtgärder för att säkerställa dataskydd och sekretess.</p>
+              <h2 className="text-2xl font-bold mb-4">7. Data Protection</h2>
+              <p className="text-gray-300 mb-4">7.1. StudienPrep processes personal data in accordance with GDPR and other applicable data protection laws.</p>
+              <p className="text-gray-300 mb-4">7.2. We take technical and organizational measures to ensure data protection and confidentiality.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">8. Tredjepartsleverantörer</h2>
-              <p className="text-gray-300 mb-4">8.1. Xerobro använder tredjepartsleverantörer för att leverera vissa tjänster. Dessa följer tillämpliga lagar och regler.</p>
+              <h2 className="text-2xl font-bold mb-4">8. Contract Duration and Termination</h2>
+              <p className="text-gray-300 mb-4">8.1. One-time services have no fixed term and require no termination.</p>
+              <p className="text-gray-300 mb-4">8.2. Ongoing services must be cancelled at least one week before the end of the billing period. Cancellation is done in writing or via email to info@studienprep.com.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">9. Avtalets längd och uppsägning</h2>
-              <p className="text-gray-300 mb-4">9.1. Engångstjänster har ingen fast löptid och kräver ingen uppsägning.</p>
-              <p className="text-gray-300 mb-4">9.2. Månatliga tjänster måste sägas upp minst en vecka före månadens slut. Uppsägning sker skriftligen eller via e-post till info@xerobro.com.</p>
+              <h2 className="text-2xl font-bold mb-4">9. Changes to Terms</h2>
+              <p className="text-gray-300 mb-4">9.1. StudienPrep reserves the right to change these Terms. Changes will be communicated to the Customer at least four weeks in advance. If the Customer does not object, the new terms are considered accepted.</p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">10. Ändringar av villkoren</h2>
-              <p className="text-gray-300 mb-4">10.1. Xerobro förbehåller sig rätten att ändra dessa Villkor. Förändringar meddelas Kunden minst fyra veckor i förväg. Om Kunden inte invänder anses de nya villkoren godkända.</p>
+              <h2 className="text-2xl font-bold mb-4">10. Contact Information</h2>
+              <p className="text-gray-300 mb-4">
+                For questions regarding these Terms of Service, please contact us at:
+              </p>
+              <p className="text-gray-300">
+                📧 info@studienprep.com
+              </p>
             </section>
           </div>
         </div>

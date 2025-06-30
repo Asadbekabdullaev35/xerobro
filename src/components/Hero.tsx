@@ -52,6 +52,13 @@ const Hero = () => {
     }
   };
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -82,12 +89,21 @@ const Hero = () => {
               {t('hero.subtitle')}
             </p>
 
-            <div className="flex justify-center lg:justify-start header-animate opacity-0 transform translate-y-8">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 header-animate opacity-0 transform translate-y-8">
               <button 
                 onClick={scrollToContact}
                 className="group bg-white text-black px-8 py-4 rounded-lg font-mono hover:bg-gray-100 transition-all flex items-center justify-center border border-white/50 glow-md hover-glow"
               >
                 {t('hero.cta')} <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <button 
+                onClick={scrollToServices}
+                aria-label="View German Language Courses"
+                className="group bg-transparent text-white px-8 py-4 rounded-lg font-mono border-2 border-white/50 hover:bg-white/10 hover:border-white transition-all flex items-center justify-center"
+              >
+                <BookOpen className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                German Language Courses
               </button>
             </div>
           </div>

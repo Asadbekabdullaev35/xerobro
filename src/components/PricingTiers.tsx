@@ -1,9 +1,11 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { Check, Star, Crown, Zap } from 'lucide-react';
 
 const PricingTiers = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -14,46 +16,27 @@ const PricingTiers = () => {
 
   const tiers = [
     {
-      name: 'Standard',
-      price: '$200',
+      name: t('pricing.standard.name'),
+      price: t('pricing.standard.price'),
       icon: Star,
-      description: 'Perfect for document preparation and basic consultation',
-      features: [
-        'Documents application',
-        'Personal consultation with an applications expert',
-        'Delivery: up to 10 days',
-        'Format: fully online'
-      ],
+      description: t('pricing.standard.description'),
+      features: t('pricing.standard.features', { returnObjects: true }) as string[],
       popular: false
     },
     {
-      name: 'Pro',
-      price: '$699',
+      name: t('pricing.pro.name'),
+      price: t('pricing.pro.price'),
       icon: Crown,
-      description: 'Comprehensive support for your entire application process',
-      features: [
-        'Everything in Standard',
-        'Visa application assistance',
-        'Accommodation search support',
-        'Insurance & blocked account setup',
-        'Emergency university liaison',
-        'Format: online + bot notifications'
-      ],
+      description: t('pricing.pro.description'),
+      features: t('pricing.pro.features', { returnObjects: true }) as string[],
       popular: true
     },
     {
-      name: 'Premium',
-      price: '$999',
+      name: t('pricing.premium.name'),
+      price: t('pricing.premium.price'),
       icon: Zap,
-      description: 'Complete end-to-end journey with personal accompaniment',
-      features: [
-        'Everything in Standard & Pro',
-        'End-to-end process accompaniment',
-        'Anmeldung, bank & insurance setup',
-        'Residence permit application help',
-        'Bureaucratic question support',
-        'Format: online + chat/phone + in-person'
-      ],
+      description: t('pricing.premium.description'),
+      features: t('pricing.premium.features', { returnObjects: true }) as string[],
       popular: false
     }
   ];
@@ -69,10 +52,10 @@ const PricingTiers = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-              Choose Your Support Level
+              {t('pricing.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              From basic document help to complete journey accompaniment
+              {t('pricing.subtitle')}
             </p>
           </div>
 
@@ -86,7 +69,7 @@ const PricingTiers = () => {
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-white text-black px-4 py-1 rounded-full text-sm font-bold">
-                      MOST POPULAR
+                      {t('pricing.popular')}
                     </div>
                   </div>
                 )}
@@ -128,7 +111,7 @@ const PricingTiers = () => {
                         : 'bg-white/10 text-white hover:bg-white/20'
                     } relative overflow-hidden group/btn`}
                   >
-                    <span className="relative z-10">Get Started</span>
+                    <span className="relative z-10">{t('pricing.getStarted')}</span>
                     <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transition-transform duration-500" />
                   </button>
                 </div>

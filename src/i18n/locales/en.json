@@ -1,0 +1,226 @@
+{
+  "nav": {
+    "services": "Services",
+    "pricing": "Pricing",
+    "testimonials": "Success Stories",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "consultation": "Free Consultation"
+  },
+  "hero": {
+    "title1": "Master German & Secure Your University Spot",
+    "title2": "From A1 to C-Test Success",
+    "title3": "Complete University Support",
+    "title4": "Your Path to Germany Starts Here",
+    "subtitle": "From language courses A1–C-Test to full university, visa & accommodation support. Your complete journey to studying in Germany.",
+    "cta": "Get Your Free Consultation",
+    "terminal": {
+      "path": "~/german-path/journey.sh",
+      "description": "Language + University + Visa + Support",
+      "status": "✓ Complete German Journey"
+    }
+  },
+  "about": {
+    "title": "Your Complete Path to German Universities",
+    "subtitle": "We provide comprehensive support from German language learning to university admission, visa processing, and settling in Germany. Your success is our mission.",
+    "stats": {
+      "students": "Students Supported",
+      "success": "Success Rate",
+      "universities": "Universities"
+    },
+    "description": "Join thousands of successful students who have achieved their German university dreams through our comprehensive support system and expert guidance."
+  },
+  "services": {
+    "title": "Complete German Journey Support",
+    "subtitle": "Everything you need from language learning to settling in Germany",
+    "german": {
+      "title": "German Language Courses",
+      "description": "A1–A2, B1–B2, C1 & Studienkolleg C-Test with one-on-one coaching",
+      "features": [
+        "Structured A1-C1 curriculum",
+        "Studienkolleg C-Test preparation",
+        "One-on-one coaching sessions",
+        "Interactive learning materials"
+      ]
+    },
+    "university": {
+      "title": "University Applications",
+      "description": "Expert guidance on applications, documents & deadlines",
+      "features": [
+        "University selection guidance",
+        "Application document preparation",
+        "Deadline management",
+        "Admission strategy consulting"
+      ]
+    },
+    "visa": {
+      "title": "Visa & Accommodation",
+      "description": "Blocked account, insurance, visa paperwork & housing search",
+      "features": [
+        "Blocked account setup",
+        "Health insurance arrangement",
+        "Visa application support",
+        "Housing search assistance"
+      ]
+    },
+    "support": {
+      "title": "Ongoing Support",
+      "description": "Chat, phone & in-person assistance in Germany and Uzbekistan",
+      "features": [
+        "24/7 chat support",
+        "Phone consultation",
+        "In-person meetings",
+        "Emergency assistance"
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Support Level",
+    "subtitle": "From basic document help to complete journey accompaniment",
+    "popular": "MOST POPULAR",
+    "getStarted": "Get Started",
+    "standard": {
+      "name": "Standard",
+      "price": "$200",
+      "description": "Perfect for document preparation and basic consultation",
+      "features": [
+        "Documents application",
+        "Personal consultation with an applications expert",
+        "Delivery: up to 10 days",
+        "Format: fully online"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$699",
+      "description": "Comprehensive support for your entire application process",
+      "features": [
+        "Everything in Standard",
+        "Visa application assistance",
+        "Accommodation search support",
+        "Insurance & blocked account setup",
+        "Emergency university liaison",
+        "Format: online + bot notifications"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$999",
+      "description": "Complete end-to-end journey with personal accompaniment",
+      "features": [
+        "Everything in Standard & Pro",
+        "End-to-end process accompaniment",
+        "Anmeldung, bank & insurance setup",
+        "Residence permit application help",
+        "Bureaucratic question support",
+        "Format: online + chat/phone + in-person"
+      ]
+    }
+  },
+  "howItWorks": {
+    "title": "Your Journey to Germany",
+    "subtitle": "Our proven three-step process to German university success",
+    "enroll": {
+      "title": "Enroll",
+      "description": "Choose language level & service tier",
+      "details": "Select your German proficiency level and the support package that fits your needs"
+    },
+    "prepare": {
+      "title": "Prepare",
+      "description": "Language training & application prep",
+      "details": "Intensive German courses and comprehensive university application preparation"
+    },
+    "succeed": {
+      "title": "Succeed",
+      "description": "Visa, arrival & ongoing support",
+      "details": "Complete visa processing, arrival assistance, and continuous support in Germany"
+    }
+  },
+  "testimonials": {
+    "title": "Success Stories",
+    "subtitle": "Hear from students who achieved their German university dreams with our support"
+  },
+  "whyUs": {
+    "title": "Why Choose GermanPath?",
+    "subtitle": "We combine language expertise with comprehensive university support to give you the complete solution for your German education journey.",
+    "expert": {
+      "title": "Expert Team",
+      "description": "Native German speakers and certified language instructors with university admission expertise"
+    },
+    "success": {
+      "title": "Proven Success",
+      "description": "98% success rate with over 1000 students successfully placed in German universities"
+    },
+    "flexible": {
+      "title": "Flexible Support",
+      "description": "Online courses, in-person meetings, and 24/7 chat support to fit your schedule"
+    },
+    "complete": {
+      "title": "Complete Journey",
+      "description": "End-to-end support from language learning to settling in Germany with ongoing assistance"
+    },
+    "teamPhoto": {
+      "title": "Our Expert Team",
+      "description": "Native German speakers and university admission specialists"
+    }
+  },
+  "contact": {
+    "title": "Start Your German Journey",
+    "subtitle": "Get your free consultation and personalized plan for studying in Germany",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "languageLevel": "Desired Language Level",
+      "serviceTier": "Service Tier",
+      "message": "Tell Us About Your Goals",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email",
+      "messagePlaceholder": "Tell us about your German language goals, university preferences, timeline, or any specific questions...",
+      "selectLevel": "Select your target level",
+      "selectTier": "Select service level",
+      "required": "*",
+      "submit": "Request Consultation"
+    },
+    "languageLevels": [
+      "Complete Beginner (A1)",
+      "Elementary (A2)",
+      "Intermediate (B1)",
+      "Upper Intermediate (B2)",
+      "Advanced (C1)",
+      "C-Test Preparation",
+      "Not Sure - Need Assessment"
+    ],
+    "serviceTiers": [
+      "Standard ($200)",
+      "Pro ($699)",
+      "Premium ($999)",
+      "Not Sure - Need Consultation"
+    ],
+    "success": "Thank you! We'll contact you within 24 hours to schedule your free consultation.",
+    "error": "There was an error sending your request. Please try again."
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved.",
+    "backToHome": "Back to Home"
+  },
+  "pages": {
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about German language learning and university applications"
+    },
+    "services": {
+      "title": "Complete German Journey Support",
+      "subtitle": "Everything you need from language learning to settling in Germany",
+      "whyChoose": "Why Choose GermanPath?",
+      "whySubtitle": "What sets us apart in German language and university consulting"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy"
+    },
+    "termsOfService": {
+      "title": "Terms of Service"
+    }
+  }
+}

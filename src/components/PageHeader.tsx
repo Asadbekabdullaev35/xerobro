@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, Languages } from 'lucide-react';
 
 interface PageHeaderProps {
@@ -8,6 +9,7 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -51,7 +53,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors group"
         >
           <ChevronLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Home</span>
+          <span>{t('footer.backToHome')}</span>
         </button>
         <button
           onClick={handleLogoClick}

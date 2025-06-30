@@ -1,54 +1,36 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { BookOpen, FileText, Home, MessageCircle } from 'lucide-react';
 
 const CoreServices = () => {
   const [gridRef, gridVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
 
   const services = [
     {
       icon: BookOpen,
-      title: 'German Language Courses',
-      description: 'A1–A2, B1–B2, C1 & Studienkolleg C-Test with one-on-one coaching',
-      features: [
-        'Structured A1-C1 curriculum',
-        'Studienkolleg C-Test preparation',
-        'One-on-one coaching sessions',
-        'Interactive learning materials'
-      ]
+      title: t('services.german.title'),
+      description: t('services.german.description'),
+      features: t('services.german.features', { returnObjects: true }) as string[]
     },
     {
       icon: FileText,
-      title: 'University Applications',
-      description: 'Expert guidance on applications, documents & deadlines',
-      features: [
-        'University selection guidance',
-        'Application document preparation',
-        'Deadline management',
-        'Admission strategy consulting'
-      ]
+      title: t('services.university.title'),
+      description: t('services.university.description'),
+      features: t('services.university.features', { returnObjects: true }) as string[]
     },
     {
       icon: Home,
-      title: 'Visa & Accommodation',
-      description: 'Blocked account, insurance, visa paperwork & housing search',
-      features: [
-        'Blocked account setup',
-        'Health insurance arrangement',
-        'Visa application support',
-        'Housing search assistance'
-      ]
+      title: t('services.visa.title'),
+      description: t('services.visa.description'),
+      features: t('services.visa.features', { returnObjects: true }) as string[]
     },
     {
       icon: MessageCircle,
-      title: 'Ongoing Support',
-      description: 'Chat, phone & in-person assistance in Germany and Uzbekistan',
-      features: [
-        '24/7 chat support',
-        'Phone consultation',
-        'In-person meetings',
-        'Emergency assistance'
-      ]
+      title: t('services.support.title'),
+      description: t('services.support.description'),
+      features: t('services.support.features', { returnObjects: true }) as string[]
     }
   ];
 
@@ -57,10 +39,10 @@ const CoreServices = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-            Complete German Journey Support
+            {t('services.title')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Everything you need from language learning to settling in Germany
+            {t('services.subtitle')}
           </p>
         </div>
 

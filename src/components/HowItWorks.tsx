@@ -1,28 +1,30 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { UserPlus, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
 
   const steps = [
     {
       icon: UserPlus,
-      title: 'Enroll',
-      description: 'Choose language level & service tier',
-      details: 'Select your German proficiency level and the support package that fits your needs'
+      title: t('howItWorks.enroll.title'),
+      description: t('howItWorks.enroll.description'),
+      details: t('howItWorks.enroll.details')
     },
     {
       icon: BookOpen,
-      title: 'Prepare',
-      description: 'Language training & application prep',
-      details: 'Intensive German courses and comprehensive university application preparation'
+      title: t('howItWorks.prepare.title'),
+      description: t('howItWorks.prepare.description'),
+      details: t('howItWorks.prepare.details')
     },
     {
       icon: GraduationCap,
-      title: 'Succeed',
-      description: 'Visa, arrival & ongoing support',
-      details: 'Complete visa processing, arrival assistance, and continuous support in Germany'
+      title: t('howItWorks.succeed.title'),
+      description: t('howItWorks.succeed.description'),
+      details: t('howItWorks.succeed.details')
     }
   ];
 
@@ -37,10 +39,10 @@ const HowItWorks = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-              Your Journey to Germany
+              {t('howItWorks.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Our proven three-step process to German university success
+              {t('howItWorks.subtitle')}
             </p>
           </div>
 

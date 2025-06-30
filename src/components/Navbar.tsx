@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../hooks/useScrollDirection';
+import { useTranslation } from 'react-i18next';
 import { Languages } from 'lucide-react';
+import LanguageToggle from './LanguageToggle';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const isVisible = useScrollDirection();
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setMounted(true);
@@ -54,37 +57,38 @@ const Navbar = () => {
               onClick={() => scrollToSection('services')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Services
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Pricing
+              {t('nav.pricing')}
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Success Stories
+              {t('nav.testimonials')}
             </button>
             <button 
               onClick={() => navigate('/faq')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              FAQ
+              {t('nav.faq')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Contact
+              {t('nav.contact')}
             </button>
+            <LanguageToggle />
             <button 
               onClick={() => scrollToSection('contact')}
               className="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/20 transition-colors border border-white/20"
             >
-              Free Consultation
+              {t('nav.consultation')}
             </button>
           </div>
         </div>

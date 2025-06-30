@@ -1,14 +1,16 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { ArrowRight, Users, Award, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Users, Award, Globe } from 'lucide-react';
 
 const About = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
 
   const stats = [
-    { icon: Users, value: '1000+', label: 'Students Supported' },
-    { icon: Award, value: '98%', label: 'Success Rate' },
-    { icon: Globe, value: '50+', label: 'Universities' }
+    { icon: Users, value: '1000+', label: t('about.stats.students') },
+    { icon: Award, value: '98%', label: t('about.stats.success') },
+    { icon: Globe, value: '50+', label: t('about.stats.universities') }
   ];
 
   return (
@@ -22,11 +24,10 @@ const About = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent mb-6">
-              Your Complete Path to German Universities
+              {t('about.title')}
             </h2>
             <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-4xl mx-auto">
-              We provide comprehensive support from German language learning to university admission, 
-              visa processing, and settling in Germany. Your success is our mission.
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -49,8 +50,7 @@ const About = () => {
 
           <div className="text-center">
             <p className="text-white/70 text-lg mb-6">
-              Join thousands of successful students who have achieved their German university dreams 
-              through our comprehensive support system and expert guidance.
+              {t('about.description')}
             </p>
             <div className="h-[1px] w-24 bg-gradient-to-r from-white via-white/50 to-transparent mx-auto" />
           </div>

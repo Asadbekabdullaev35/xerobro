@@ -1,8 +1,11 @@
 import React from 'react';
 import { Languages, Mail, Phone, MapPin, ExternalLink, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-black relative">
       {/* Gradient divider */}
@@ -42,22 +45,22 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div className="flex flex-col items-center space-y-4">
-            <h3 className="text-white font-semibold text-xl mb-2">Quick Links</h3>
+            <h3 className="text-white font-semibold text-xl mb-2">{t('footer.quickLinks')}</h3>
             <a href="#services" className="flex items-center text-gray-400 hover:text-white transition-colors group">
               <ExternalLink size={16} className="mr-3 group-hover:translate-x-1 transition-transform" />
-              Services
+              {t('nav.services')}
             </a>
             <a href="#pricing" className="flex items-center text-gray-400 hover:text-white transition-colors group">
               <ExternalLink size={16} className="mr-3 group-hover:translate-x-1 transition-transform" />
-              Pricing
+              {t('nav.pricing')}
             </a>
             <a href="#testimonials" className="flex items-center text-gray-400 hover:text-white transition-colors group">
               <ExternalLink size={16} className="mr-3 group-hover:translate-x-1 transition-transform" />
-              Success Stories
+              {t('nav.testimonials')}
             </a>
             <Link to="/faq" className="flex items-center text-gray-400 hover:text-white transition-colors group">
               <ExternalLink size={16} className="mr-3 group-hover:translate-x-1 transition-transform" />
-              FAQ
+              {t('nav.faq')}
             </Link>
             <Link to="/privacy-policy" className="flex items-center text-gray-400 hover:text-white transition-colors group">
               <ExternalLink size={16} className="mr-3 group-hover:translate-x-1 transition-transform" />
@@ -71,7 +74,7 @@ const Footer = () => {
           
           {/* Social Media */}
           <div className="flex flex-col items-center space-y-4">
-            <h3 className="text-white font-semibold text-xl mb-2">Follow Us</h3>
+            <h3 className="text-white font-semibold text-xl mb-2">{t('footer.followUs')}</h3>
             <div className="flex flex-col items-center space-y-4">
               <a 
                 href="https://linkedin.com/company/germanpath" 
@@ -108,7 +111,7 @@ const Footer = () => {
         <div className="relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <div className="pt-8 text-center">
-            <p className="text-gray-400">© {new Date().getFullYear()} GermanPath. All rights reserved.</p>
+            <p className="text-gray-400">© {new Date().getFullYear()} GermanPath. {t('footer.copyright')}</p>
           </div>
         </div>
       </div>

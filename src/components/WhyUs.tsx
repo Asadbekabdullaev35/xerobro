@@ -1,30 +1,32 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { Users, Award, Clock, Globe } from 'lucide-react';
 
 const WhyUs = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: Users,
-      title: 'Expert Team',
-      description: 'Native German speakers and certified language instructors with university admission expertise'
+      title: t('whyUs.expert.title'),
+      description: t('whyUs.expert.description')
     },
     {
       icon: Award,
-      title: 'Proven Success',
-      description: '98% success rate with over 1000 students successfully placed in German universities'
+      title: t('whyUs.success.title'),
+      description: t('whyUs.success.description')
     },
     {
       icon: Clock,
-      title: 'Flexible Support',
-      description: 'Online courses, in-person meetings, and 24/7 chat support to fit your schedule'
+      title: t('whyUs.flexible.title'),
+      description: t('whyUs.flexible.description')
     },
     {
       icon: Globe,
-      title: 'Complete Journey',
-      description: 'End-to-end support from language learning to settling in Germany with ongoing assistance'
+      title: t('whyUs.complete.title'),
+      description: t('whyUs.complete.description')
     }
   ];
 
@@ -41,11 +43,10 @@ const WhyUs = () => {
             {/* Left side - Content */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent mb-6">
-                Why Choose GermanPath?
+                {t('whyUs.title')}
               </h2>
               <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-                We combine language expertise with comprehensive university support to give you the complete 
-                solution for your German education journey.
+                {t('whyUs.subtitle')}
               </p>
               
               <div className="space-y-6">
@@ -74,10 +75,9 @@ const WhyUs = () => {
                 <div className="aspect-square bg-gradient-to-br from-white/5 to-transparent rounded-xl flex items-center justify-center">
                   <div className="text-center">
                     <Users className="h-24 w-24 text-white/30 mx-auto mb-4" />
-                    <p className="text-white/60 text-lg">Our Expert Team</p>
+                    <p className="text-white/60 text-lg">{t('whyUs.teamPhoto.title')}</p>
                     <p className="text-white/40 text-sm mt-2">
-                      Native German speakers and<br />
-                      university admission specialists
+                      {t('whyUs.teamPhoto.description')}
                     </p>
                   </div>
                 </div>

@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, BookOpen, FileText, Home, MessageCircle } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const createShootingStar = () => {
       const star = document.createElement('div');
@@ -58,13 +61,13 @@ const Hero = () => {
               <div className="relative h-[180px] md:h-[150px]">
                 <TypeAnimation
                   sequence={[
-                    'Master German & Secure Your University Spot',
+                    t('hero.title1'),
                     2000,
-                    'From A1 to C-Test Success',
+                    t('hero.title2'),
                     2000,
-                    'Complete University Support',
+                    t('hero.title3'),
                     2000,
-                    'Your Path to Germany Starts Here',
+                    t('hero.title4'),
                     2000,
                   ]}
                   wrapper="div"
@@ -76,7 +79,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-gray-400 text-lg max-w-xl header-animate opacity-0 transform translate-y-8">
-              From language courses A1–C-Test to full university, visa & accommodation support. Your complete journey to studying in Germany.
+              {t('hero.subtitle')}
             </p>
 
             <div className="flex justify-center lg:justify-start header-animate opacity-0 transform translate-y-8">
@@ -84,7 +87,7 @@ const Hero = () => {
                 onClick={scrollToContact}
                 className="group bg-white text-black px-8 py-4 rounded-lg font-mono hover:bg-gray-100 transition-all flex items-center justify-center border border-white/50 glow-md hover-glow"
               >
-                Get Your Free Consultation <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                {t('hero.cta')} <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -96,7 +99,7 @@ const Hero = () => {
                   <div className="h-3 w-3 rounded-full bg-red-500" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500" />
                   <div className="h-3 w-3 rounded-full bg-green-500" />
-                  <span className="ml-2 text-sm text-gray-400 font-mono">~/german-path/journey.sh</span>
+                  <span className="ml-2 text-sm text-gray-400 font-mono">{t('hero.terminal.path')}</span>
                 </div>
               </div>
 
@@ -111,8 +114,8 @@ const Hero = () => {
                   <MessageCircle className="h-12 w-12 text-orange-400 animate-bounce" style={{ animationDelay: '1.5s' }} />
                 </div>
                 <div className="text-center">
-                  <div className="text-white/80 mb-2">Language + University + Visa + Support</div>
-                  <div className="text-green-400 text-sm">✓ Complete German Journey</div>
+                  <div className="text-white/80 mb-2">{t('hero.terminal.description')}</div>
+                  <div className="text-green-400 text-sm">{t('hero.terminal.status')}</div>
                 </div>
                 <div className="text-white/80 absolute bottom-4 left-4">
                   $ <span className="animate-pulse">_</span>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { Send, CheckCircle, XCircle } from 'lucide-react';
 
 const ContactForm = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,22 +15,8 @@ const ContactForm = () => {
   });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const languageLevels = [
-    'Complete Beginner (A1)',
-    'Elementary (A2)',
-    'Intermediate (B1)',
-    'Upper Intermediate (B2)',
-    'Advanced (C1)',
-    'C-Test Preparation',
-    'Not Sure - Need Assessment'
-  ];
-
-  const serviceTiers = [
-    'Standard ($200)',
-    'Pro ($699)',
-    'Premium ($999)',
-    'Not Sure - Need Consultation'
-  ];
+  const languageLevels = t('contact.languageLevels', { returnObjects: true }) as string[];
+  const serviceTiers = t('contact.serviceTiers', { returnObjects: true }) as string[];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -87,10 +75,10 @@ ${formData.message}
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-              Start Your German Journey
+              {t('contact.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Get your free consultation and personalized plan for studying in Germany
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -99,14 +87,14 @@ ${formData.message}
               {submitStatus === 'success' && (
                 <div className="mb-8 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center text-green-400">
                   <CheckCircle className="h-5 w-5 mr-2" />
-                  Thank you! We'll contact you within 24 hours to schedule your free consultation.
+                  {t('contact.success')}
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center text-red-400">
                   <XCircle className="h-5 w-5 mr-2" />
-                  There was an error sending your request. Please try again.
+                  {t('contact.error')}
                 </div>
               )}
 
@@ -114,7 +102,7 @@ ${formData.message}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Full Name *
+                      {t('contact.form.name')} {t('contact.form.required')}
                     </label>
                     <input
                       type="text"
@@ -123,14 +111,14 @@ ${formData.message}
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-                      placeholder="Enter your full name"
+                      placeholder={t('contact.form.namePlaceholder')}
                       required
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email Address *
+                      {t('contact.form.email')} {t('contact.form.required')}
                     </label>
                     <input
                       type="email"
@@ -139,7 +127,7 @@ ${formData.message}
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-                      placeholder="Enter your email"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       required
                     />
                   </div>
@@ -148,7 +136,7 @@ ${formData.message}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="languageLevel" className="block text-sm font-medium text-gray-300 mb-2">
-                      Desired Language Level
+                      {t('contact.form.languageLevel')}
                     </label>
                     <select
                       id="languageLevel"
@@ -157,7 +145,7 @@ ${formData.message}
                       onChange={handleChange}
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
-                      <option value="">Select your target level</option>
+                      <option value="">{t('contact.form.selectLevel')}</option>
                       {languageLevels.map((level) => (
                         <option key={level} value={level}>{level}</option>
                       ))}
@@ -166,7 +154,7 @@ ${formData.message}
 
                   <div>
                     <label htmlFor="serviceTier" className="block text-sm font-medium text-gray-300 mb-2">
-                      Service Tier
+                      {t('contact.form.serviceTier')}
                     </label>
                     <select
                       id="serviceTier"
@@ -175,7 +163,7 @@ ${formData.message}
                       onChange={handleChange}
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
-                      <option value="">Select service level</option>
+                      <option value="">{t('contact.form.selectTier')}</option>
                       {serviceTiers.map((tier) => (
                         <option key={tier} value={tier}>{tier}</option>
                       ))}
@@ -185,7 +173,7 @@ ${formData.message}
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Tell Us About Your Goals
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id="message"
@@ -194,7 +182,7 @@ ${formData.message}
                     onChange={handleChange}
                     rows={4}
                     className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Tell us about your German language goals, university preferences, timeline, or any specific questions..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>
 
@@ -203,7 +191,7 @@ ${formData.message}
                   className="w-full bg-white text-black px-8 py-4 rounded-lg font-mono hover:bg-gray-100 transition-all flex items-center justify-center border border-white/50 glow-md hover-glow group"
                 >
                   <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  Request Consultation
+                  {t('contact.form.submit')}
                 </button>
               </form>
             </div>

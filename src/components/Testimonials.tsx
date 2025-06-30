@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const Testimonials = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation();
 
   const testimonials = [
     {
@@ -64,10 +66,10 @@ const Testimonials = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-              Success Stories
+              {t('testimonials.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Hear from students who achieved their German university dreams with our support
+              {t('testimonials.subtitle')}
             </p>
           </div>
 

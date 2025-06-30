@@ -1,35 +1,116 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, BookOpen, FileText, Home, MessageCircle } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const heroRef = useRef<HTMLDivElement>(null);
+  const starsRef = useRef<Set<HTMLDivElement>>(new Set());
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const createShootingStar = () => {
+      if (!heroRef.current) return;
+
       const star = document.createElement('div');
       star.className = 'shooting-star';
       
-      const startPos = Math.random() * 30;
-      star.style.top = `${startPos}%`;
-      star.style.right = '-50px';
+      // Randomize starting position (top-left quadrant bias)
+      const startX = Math.random() * 30; // 0-30% from left
+      const startY = Math.random() * 25; // 0-25% from top
       
-      const duration = 1.5 + Math.random() * 0.5;
-      star.style.animation = `shooting-star-animation ${duration}s linear`;
+      // Randomize ending position (bottom-right quadrant bias)
+      const endX = 70 + Math.random() * 30; // 70-100% from left
+      const endY = 75 + Math.random() * 25; // 75-100% from top
+      
+      // Randomize size and opacity
+      const scale = 0.5 + Math.random() * 0.5; // 0.5x to 1x scale
+      const opacity = 0.6 + Math.random() * 0.4; // 0.6 to 1.0 opacity
+      const duration = 1.5 + Math.random() * 0.5; // 1.5-2 seconds
+      
+      // Set initial position
+      star.style.left = `${startX}%`;
+      star.style.top = `${startY}%`;
+      star.style.transform = `scale(${scale})`;
+      star.style.opacity = opacity.toString();
+      
+      // Calculate angle for rotation based on trajectory
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+      const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+      
+      // Create custom animation
+      const keyframes = `
+        @keyframes shooting-star-${Date.now()}-${Math.random()} {
+          0% {
+            left: ${startX}%;
+            top: ${startY}%;
+            opacity: 0;
+            transform: scale(${scale}) rotate(${angle}deg);
+          }
+          10% {
+            opacity: ${opacity};
+          }
+          90% {
+            opacity: ${opacity * 0.8};
+          }
+          100% {
+            left: ${endX}%;
+            top: ${endY}%;
+            opacity: 0;
+            transform: scale(${scale * 0.3}) rotate(${angle}deg);
+          }
+        }
+      `;
+      
+      // Add keyframes to document
+      const style = document.createElement('style');
+      style.textContent = keyframes;
+      document.head.appendChild(style);
+      
+      // Apply animation
+      const animationName = keyframes.match(/@keyframes ([^\s{]+)/)?.[1];
+      if (animationName) {
+        star.style.animation = `${animationName} ${duration}s ease-out forwards`;
+      }
 
-      document.getElementById('hero-section')?.appendChild(star);
+      heroRef.current.appendChild(star);
+      starsRef.current.add(star);
 
-      star.addEventListener('animationend', () => {
-        star.remove();
-      });
+      // Clean up after animation
+      const cleanup = () => {
+        if (star.parentNode) {
+          star.parentNode.removeChild(star);
+        }
+        if (style.parentNode) {
+          style.parentNode.removeChild(style);
+        }
+        starsRef.current.delete(star);
+      };
+
+      star.addEventListener('animationend', cleanup);
+      
+      // Fallback cleanup
+      setTimeout(cleanup, duration * 1000 + 100);
     };
 
-    const interval = setInterval(() => {
-      if (Math.random() > 0.80) {
-        createShootingStar();
-      }
-    }, 2000);
+    const startStarAnimation = () => {
+      // Create initial stars with staggered timing
+      setTimeout(() => createShootingStar(), 500);
+      setTimeout(() => createShootingStar(), 1200);
+      setTimeout(() => createShootingStar(), 2100);
+
+      // Set up continuous star creation
+      intervalRef.current = setInterval(() => {
+        // Limit maximum stars on screen
+        if (starsRef.current.size < 5) {
+          // Random interval between 1-2 seconds
+          const delay = 1000 + Math.random() * 1000;
+          setTimeout(createShootingStar, delay);
+        }
+      }, 1500); // Check every 1.5 seconds
+    };
 
     const animateHeader = () => {
       const headerElements = document.querySelectorAll('.header-animate');
@@ -40,9 +121,22 @@ const Hero = () => {
       });
     };
 
+    // Start animations
     setTimeout(animateHeader, 100);
+    setTimeout(startStarAnimation, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      // Clean up any remaining stars
+      starsRef.current.forEach(star => {
+        if (star.parentNode) {
+          star.parentNode.removeChild(star);
+        }
+      });
+      starsRef.current.clear();
+    };
   }, []);
 
   const scrollToContact = () => {
@@ -53,8 +147,12 @@ const Hero = () => {
   };
 
   return (
-    <div id="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <div 
+      id="hero-section" 
+      ref={heroRef}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48"
+    >
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white glow-text header-animate opacity-0 transform translate-y-8">

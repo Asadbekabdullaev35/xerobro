@@ -65,11 +65,6 @@ body::after {
   }
 }
 
-/* Premium Shooting Stars - Base styles for the component */
-.shooting-star-premium {
-  /* Base styles are set via JavaScript for maximum control */
-}
-
 /* Enhanced Grid Animation with cosmic effects */
 .grid-animation {
   background-size: 50px 50px;
@@ -179,6 +174,63 @@ body::after {
 @keyframes matrix-rain {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
+}
+
+/* Enhanced Shooting Stars with GPU acceleration */
+.shooting-star {
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transform-origin: center;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.9), 
+    rgba(255, 255, 255, 0.6), 
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  border-radius: 1px;
+  box-shadow: 
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.4),
+    0 0 18px rgba(255, 255, 255, 0.2);
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(123, 97, 255, 0.8),
+    rgba(0, 183, 255, 0.6),
+    transparent
+  );
+  transform: translateY(-50%);
+  border-radius: 1px;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 20px;
+  height: 4px;
+  background: radial-gradient(ellipse,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  border-radius: 50%;
+  filter: blur(1px);
 }
 
 /* Header animation classes */

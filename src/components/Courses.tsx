@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BookOpen, Clock, DollarSign, Award, GraduationCap, Certificate, Users, ArrowRight } from 'lucide-react';
+import { BookOpen, Clock, DollarSign, Award, GraduationCap, AlignCenterVertical as Certificate, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import PageHeader from './PageHeader';
 

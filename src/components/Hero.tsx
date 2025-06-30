@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { ArrowRight, BookOpen, FileText, Home, MessageCircle } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const createShootingStar = () => {
@@ -59,6 +61,10 @@ const Hero = () => {
     }
   };
 
+  const handleCoursesClick = () => {
+    navigate('/courses');
+  };
+
   return (
     <div id="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-48">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -98,7 +104,7 @@ const Hero = () => {
               </button>
               
               <button 
-                onClick={scrollToServices}
+                onClick={handleCoursesClick}
                 aria-label="View German Language Courses"
                 className="group bg-transparent text-white px-8 py-4 rounded-lg font-mono border-2 border-white/50 hover:bg-white/10 hover:border-white transition-all flex items-center justify-center"
               >

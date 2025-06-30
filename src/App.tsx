@@ -16,6 +16,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import Services from './components/Services';
 import FAQ from './components/FAQ';
+import Courses from './components/Courses';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -86,6 +87,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><MainLayout /></PageTransition>} />
         <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+        <Route path="/courses" element={<PageTransition><Courses /></PageTransition>} />
         <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
         <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
         <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useTranslation } from 'react-i18next';
 import { Send, CheckCircle, XCircle } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const ContactForm = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
   const { t } = useTranslation();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,8 +17,25 @@ const ContactForm = () => {
   });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  // Check if we're coming from the courses page
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const service = urlParams.get('service');
+    
+    if (service === 'language-courses') {
+      setFormData(prev => ({
+        ...prev,
+        serviceTier: 'Language Courses',
+        message: 'I am interested in German language courses. Please provide more information about enrollment and pricing.'
+      }));
+    }
+  }, [location]);
+
   const languageLevels = t('contact.languageLevels', { returnObjects: true }) as string[];
   const serviceTiers = t('contact.serviceTiers', { returnObjects: true }) as string[];
+
+  // Add language courses option to service tiers
+  const extendedServiceTiers = ['Language Courses', ...serviceTiers];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -164,7 +183,7 @@ ${formData.message}
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
                       <option value="">{t('contact.form.selectTier')}</option>
-                      {serviceTiers.map((tier) => (
+                      {extendedServiceTiers.map((tier) => (
                         <option key={tier} value={tier}>{tier}</option>
                       ))}
                     </select>

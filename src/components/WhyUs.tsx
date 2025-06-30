@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { Users, Award, Clock, Target } from 'lucide-react';
+import { Users, Award, Clock, Globe } from 'lucide-react';
 
 const WhyUs = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
@@ -8,23 +8,23 @@ const WhyUs = () => {
   const features = [
     {
       icon: Users,
-      title: 'Expert Instructors',
-      description: 'Former Studienkolleg instructors and native German speakers with years of teaching experience'
+      title: 'Expert Team',
+      description: 'Native German speakers and certified language instructors with university admission expertise'
     },
     {
       icon: Award,
-      title: 'Proven Track Record',
-      description: '95% success rate with over 500 students successfully placed in German universities'
+      title: 'Proven Success',
+      description: '98% success rate with over 1000 students successfully placed in German universities'
     },
     {
       icon: Clock,
-      title: 'Flexible Scheduling',
-      description: 'Online and in-person classes that fit your schedule, with weekend and evening options'
+      title: 'Flexible Support',
+      description: 'Online courses, in-person meetings, and 24/7 chat support to fit your schedule'
     },
     {
-      icon: Target,
-      title: 'Personalized Approach',
-      description: 'Customized study plans based on your current level and target Studienkolleg requirements'
+      icon: Globe,
+      title: 'Complete Journey',
+      description: 'End-to-end support from language learning to settling in Germany with ongoing assistance'
     }
   ];
 
@@ -41,11 +41,11 @@ const WhyUs = () => {
             {/* Left side - Content */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent mb-6">
-                Why Choose StudienPrep?
+                Why Choose GermanPath?
               </h2>
               <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-                We combine academic excellence with practical experience to give you the best preparation 
-                for your Studienkolleg entrance exams and beyond.
+                We combine language expertise with comprehensive university support to give you the complete 
+                solution for your German education journey.
               </p>
               
               <div className="space-y-6">
@@ -76,8 +76,8 @@ const WhyUs = () => {
                     <Users className="h-24 w-24 text-white/30 mx-auto mb-4" />
                     <p className="text-white/60 text-lg">Our Expert Team</p>
                     <p className="text-white/40 text-sm mt-2">
-                      Dedicated instructors with extensive<br />
-                      Studienkolleg teaching experience
+                      Native German speakers and<br />
+                      university admission specialists
                     </p>
                   </div>
                 </div>

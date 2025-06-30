@@ -8,31 +8,31 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Maria Rodriguez',
-      university: 'TU Munich',
-      studienkolleg: 'Studienkolleg München',
-      quote: 'The math coaching was incredible! I went from struggling with basic algebra to confidently solving complex calculus problems. Now I\'m studying Engineering at TU Munich.',
+      name: 'Aziza Karimova',
+      university: 'Technical University of Munich',
+      level: 'C1 German + University Application',
+      quote: 'GermanPath helped me go from A2 to C1 in just 8 months! Their university application support was incredible - I got accepted to TUM on my first try. The visa process was so smooth with their guidance.',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Ahmed Hassan',
-      university: 'Heidelberg University',
-      studienkolleg: 'Studienkolleg Heidelberg',
-      quote: 'The German language training transformed my academic writing. The instructors were patient and the materials were perfectly tailored to the Studienkolleg requirements.',
+      name: 'Bobur Rahimov',
+      university: 'RWTH Aachen University',
+      level: 'B2 German + Premium Support',
+      quote: 'The Premium package was worth every penny. They helped me with everything - from language learning to finding accommodation in Aachen. Having in-person support made all the difference.',
       image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Li Wei',
-      university: 'RWTH Aachen',
-      studienkolleg: 'Studienkolleg Aachen',
-      quote: 'The mock tests were exactly like the real exam! The feedback helped me identify my weak points and improve systematically. I passed on my first attempt.',
+      name: 'Malika Tashkentova',
+      university: 'University of Hamburg',
+      level: 'C-Test Preparation + Pro Support',
+      quote: 'The C-Test preparation was exactly what I needed for Studienkolleg. The teachers understood the specific requirements and helped me pass with flying colors. Now I\'m studying Medicine!',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Sofia Petrov',
-      university: 'University of Hamburg',
-      studienkolleg: 'Studienkolleg Hamburg',
-      quote: 'Not only did I pass the Studienkolleg exam, but the university application support helped me get into my dream program. The team guided me through every step.',
+      name: 'Sardor Uzbekov',
+      university: 'Heidelberg University',
+      level: 'Complete Journey Support',
+      quote: 'From zero German to university admission in 18 months! The ongoing support even after arrival in Germany was amazing. They helped with Anmeldung, bank account, everything!',
       image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     }
   ];
@@ -67,7 +67,7 @@ const Testimonials = () => {
               Success Stories
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Hear from students who achieved their dreams with our preparation program
+              Hear from students who achieved their German university dreams with our support
             </p>
           </div>
 
@@ -97,7 +97,7 @@ const Testimonials = () => {
                         {testimonials[currentIndex].name}
                       </div>
                       <div className="text-gray-400 text-sm">
-                        {testimonials[currentIndex].studienkolleg}
+                        {testimonials[currentIndex].level}
                       </div>
                       <div className="text-white/70 text-sm">
                         Now studying at {testimonials[currentIndex].university}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
-import logoImage from '../data/logo/Color logo - no background.png';
+import { ChevronLeft, Languages } from 'lucide-react';
 
 interface PageHeaderProps {
   title: string;
@@ -39,10 +38,6 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
   };
 
   const handleLogoClick = () => {
-    // Clear any stored selections when navigating home
-    localStorage.removeItem('selectedAssistants');
-    localStorage.removeItem('formData');
-    localStorage.removeItem('specificRequest');
     navigate('/');
   };
 
@@ -56,13 +51,14 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors group"
         >
           <ChevronLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
-          <span>Tillbaka till startsidan</span>
+          <span>Back to Home</span>
         </button>
         <button
           onClick={handleLogoClick}
-          className="transition-opacity hover:opacity-90"
+          className="flex items-center space-x-3 text-white hover:text-gray-300 transition-colors"
         >
-          <img src={logoImage} alt="Xerobro Logo" className="h-16" />
+          <Languages className="h-8 w-8" />
+          <span className="text-xl font-bold">GermanPath</span>
         </button>
       </div>
     </header>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { ArrowRight, Award, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Users, Award, Globe } from 'lucide-react';
 
 const About = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
 
   const stats = [
-    { icon: Users, value: '500+', label: 'Students Placed' },
-    { icon: Award, value: '95%', label: 'Success Rate' },
-    { icon: TrendingUp, value: '3x', label: 'Faster Prep' }
+    { icon: Users, value: '1000+', label: 'Students Supported' },
+    { icon: Award, value: '98%', label: 'Success Rate' },
+    { icon: Globe, value: '50+', label: 'Universities' }
   ];
 
   return (
@@ -22,11 +22,11 @@ const About = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent mb-6">
-              Your Gateway to German Universities
+              Your Complete Path to German Universities
             </h2>
             <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-4xl mx-auto">
-              We specialize in preparing international students for Studienkolleg entrance exams, 
-              providing comprehensive Math and German language training that ensures your success.
+              We provide comprehensive support from German language learning to university admission, 
+              visa processing, and settling in Germany. Your success is our mission.
             </p>
           </div>
 
@@ -49,8 +49,8 @@ const About = () => {
 
           <div className="text-center">
             <p className="text-white/70 text-lg mb-6">
-              Join the ranks of successful students who have secured their place in prestigious German universities 
-              through our proven preparation methods.
+              Join thousands of successful students who have achieved their German university dreams 
+              through our comprehensive support system and expert guidance.
             </p>
             <div className="h-[1px] w-24 bg-gradient-to-r from-white via-white/50 to-transparent mx-auto" />
           </div>

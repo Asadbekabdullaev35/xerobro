@@ -7,44 +7,44 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What is a Studienkolleg?',
-      answer: 'A Studienkolleg is a preparatory college in Germany that helps international students prepare for university studies. It\'s designed for students whose secondary school qualifications are not directly recognized for university admission in Germany. The program typically lasts one year and concludes with the Feststellungsprüfung (assessment test).'
+      question: 'What German language levels do you offer?',
+      answer: 'We offer comprehensive German language training from complete beginner (A1) to advanced (C1) levels, including specialized Studienkolleg C-Test preparation. Our courses are designed to meet the specific requirements of German universities and follow the Common European Framework of Reference for Languages (CEFR).'
     },
     {
-      question: 'Do I need to attend a Studienkolleg?',
-      answer: 'Whether you need to attend a Studienkolleg depends on your educational background and the country where you completed your secondary education. Students from many countries outside the EU typically need to complete Studienkolleg before university admission. We can help assess your specific situation during your free consultation.'
+      question: 'How long does it take to reach university-level German?',
+      answer: 'The timeline depends on your starting level and study intensity. Typically, students can progress from A1 to B2 level in 8-12 months with our intensive program. For C1 level or C-Test preparation, an additional 3-6 months is usually required. We provide personalized timelines based on your goals and availability.'
     },
     {
-      question: 'What subjects are covered in the entrance exam?',
-      answer: 'The entrance exam typically covers Mathematics and German language skills. The specific content depends on your chosen course of study (T-Kurs for technical subjects, W-Kurs for economics, M-Kurs for medicine, etc.). Our preparation program covers all relevant areas comprehensively.'
+      question: 'What is included in the university application support?',
+      answer: 'Our university application support includes university selection guidance, document preparation and translation, personal statement writing, deadline management, admission requirements consultation, and application tracking. We help you navigate the complex German university system and maximize your chances of acceptance.'
     },
     {
-      question: 'How long does the preparation take?',
-      answer: 'Our preparation program is flexible and depends on your current level. Most students complete our program in 3-6 months with intensive study. We offer both accelerated courses for students with strong foundations and extended programs for those who need more comprehensive preparation.'
+      question: 'Do you help with visa applications?',
+      answer: 'Yes, we provide comprehensive visa support including blocked account setup, health insurance arrangement, document preparation and translation, visa application guidance, and interview preparation. Our team is experienced with German student visa requirements and processes.'
+    },
+    {
+      question: 'What is the difference between your service tiers?',
+      answer: 'Standard ($200) includes basic document preparation and consultation. Pro ($699) adds visa assistance, accommodation search, and insurance setup. Premium ($999) provides complete end-to-end support including in-person assistance in both Uzbekistan and Germany, bureaucratic help, and ongoing support throughout your journey.'
+    },
+    {
+      question: 'Do you provide support after arrival in Germany?',
+      answer: 'Yes, our Pro and Premium packages include ongoing support after your arrival in Germany. This includes help with Anmeldung (registration), bank account opening, residence permit applications, and general bureaucratic assistance. We have local support staff in major German cities.'
+    },
+    {
+      question: 'Can I switch between service tiers?',
+      answer: 'Absolutely! You can upgrade your service tier at any time during your journey. Many students start with Standard and upgrade to Pro or Premium as their needs evolve. We\'ll adjust pricing accordingly and ensure seamless continuation of your support.'
     },
     {
       question: 'What is your success rate?',
-      answer: 'We maintain a 95% success rate for students who complete our full preparation program. Over 500 students have successfully passed their Studienkolleg entrance exams and gone on to study at prestigious German universities including TU Munich, RWTH Aachen, and Heidelberg University.'
+      answer: 'We maintain a 98% success rate for students who complete our programs. Over 1000 students have successfully gained admission to German universities through our support, including top institutions like TU Munich, RWTH Aachen, and Heidelberg University.'
     },
     {
-      question: 'Do you offer online classes?',
-      answer: 'Yes, we offer both online and in-person classes to accommodate different learning preferences and schedules. Our online platform includes live interactive sessions, recorded lectures, practice tests, and one-on-one tutoring sessions with our expert instructors.'
+      question: 'Do you offer online or in-person classes?',
+      answer: 'We offer flexible learning options including online classes, in-person sessions in Tashkent, and hybrid programs. Our online platform provides interactive lessons, while in-person sessions offer personalized attention. Premium package includes in-person support in Germany as well.'
     },
     {
-      question: 'What makes your program different?',
-      answer: 'Our instructors are former Studienkolleg teachers and native German speakers with extensive experience in the German education system. We provide personalized study plans, realistic mock exams, and comprehensive feedback. Additionally, we offer optional university application support to guide you through the entire process.'
-    },
-    {
-      question: 'How much does the program cost?',
-      answer: 'Our program costs vary depending on the specific services you choose and the duration of preparation needed. We offer flexible payment plans and packages. Contact us for a free assessment and personalized quote based on your specific needs and goals.'
-    },
-    {
-      question: 'Can you help with university applications?',
-      answer: 'Yes, we offer comprehensive university application support as an additional service. This includes document preparation, translation services, application form completion, university selection guidance, and interview preparation. Our team has extensive experience with German university admission processes.'
-    },
-    {
-      question: 'What if I don\'t pass the exam on my first attempt?',
-      answer: 'While our success rate is very high, if you don\'t pass on your first attempt, we provide additional support at no extra cost for students who completed our full program. This includes analysis of your exam performance, additional tutoring sessions, and preparation for the next exam date.'
+      question: 'How do I get started?',
+      answer: 'Simply fill out our contact form to request a free consultation. We\'ll assess your current German level, discuss your university goals, and recommend the best service tier for your needs. You can then enroll in our program and begin your journey to studying in Germany.'
     }
   ];
 
@@ -64,7 +64,7 @@ const FAQ = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-mono">FAQ</h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Everything you need to know about Studienkolleg preparation and our services
+              Everything you need to know about German language learning and university applications
             </p>
           </div>
 

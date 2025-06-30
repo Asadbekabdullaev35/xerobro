@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../hooks/useScrollDirection';
-import { GraduationCap } from 'lucide-react';
+import { Languages } from 'lucide-react';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -45,8 +45,8 @@ const Navbar = () => {
             onClick={handleLogoClick} 
             className="text-white hover:text-gray-300 transition-colors flex items-center space-x-3"
           >
-            <GraduationCap className="h-8 w-8" />
-            <span className="text-xl font-bold">StudienPrep</span>
+            <Languages className="h-8 w-8" />
+            <span className="text-xl font-bold">GermanPath</span>
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -57,10 +57,16 @@ const Navbar = () => {
               Services
             </button>
             <button 
+              onClick={() => scrollToSection('pricing')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Pricing
+            </button>
+            <button 
               onClick={() => scrollToSection('testimonials')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Testimonials
+              Success Stories
             </button>
             <button 
               onClick={() => navigate('/faq')}
@@ -78,7 +84,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('contact')}
               className="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/20 transition-colors border border-white/20"
             >
-              Free Assessment
+              Free Consultation
             </button>
           </div>
         </div>

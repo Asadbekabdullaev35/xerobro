@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, BookOpen, Calculator } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, Home, MessageCircle } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
-import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     const createShootingStar = () => {
       const star = document.createElement('div');
@@ -61,13 +58,13 @@ const Hero = () => {
               <div className="relative h-[180px] md:h-[150px]">
                 <TypeAnimation
                   sequence={[
-                    'Master Your Studienkolleg Entrance Exams',
+                    'Master German & Secure Your University Spot',
                     2000,
-                    'Ace German University Prep',
+                    'From A1 to C-Test Success',
                     2000,
-                    'Secure Your Academic Future',
+                    'Complete University Support',
                     2000,
-                    'Excel in Math & German',
+                    'Your Path to Germany Starts Here',
                     2000,
                   ]}
                   wrapper="div"
@@ -79,7 +76,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-gray-400 text-lg max-w-xl header-animate opacity-0 transform translate-y-8">
-              Expert Math & German test prep to secure your spot in a German university Studienkolleg. Join hundreds of successful students who achieved their dreams.
+              From language courses A1–C-Test to full university, visa & accommodation support. Your complete journey to studying in Germany.
             </p>
 
             <div className="flex justify-center lg:justify-start header-animate opacity-0 transform translate-y-8">
@@ -87,7 +84,7 @@ const Hero = () => {
                 onClick={scrollToContact}
                 className="group bg-white text-black px-8 py-4 rounded-lg font-mono hover:bg-gray-100 transition-all flex items-center justify-center border border-white/50 glow-md hover-glow"
               >
-                Start Your Free Assessment <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Get Your Free Consultation <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -99,19 +96,23 @@ const Hero = () => {
                   <div className="h-3 w-3 rounded-full bg-red-500" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500" />
                   <div className="h-3 w-3 rounded-full bg-green-500" />
-                  <span className="ml-2 text-sm text-gray-400 font-mono">~/studienkolleg/prep.sh</span>
+                  <span className="ml-2 text-sm text-gray-400 font-mono">~/german-path/journey.sh</span>
                 </div>
               </div>
 
               <div className="p-4 font-mono text-sm h-[250px] flex flex-col justify-center items-center space-y-6">
                 <div className="flex items-center space-x-4">
-                  <Calculator className="h-12 w-12 text-blue-400 animate-bounce" />
+                  <BookOpen className="h-12 w-12 text-blue-400 animate-bounce" />
                   <span className="text-2xl text-white">+</span>
-                  <BookOpen className="h-12 w-12 text-green-400 animate-bounce" style={{ animationDelay: '0.5s' }} />
+                  <FileText className="h-12 w-12 text-green-400 animate-bounce" style={{ animationDelay: '0.5s' }} />
+                  <span className="text-2xl text-white">+</span>
+                  <Home className="h-12 w-12 text-purple-400 animate-bounce" style={{ animationDelay: '1s' }} />
+                  <span className="text-2xl text-white">+</span>
+                  <MessageCircle className="h-12 w-12 text-orange-400 animate-bounce" style={{ animationDelay: '1.5s' }} />
                 </div>
                 <div className="text-center">
-                  <div className="text-white/80 mb-2">Math + German = Success</div>
-                  <div className="text-green-400 text-sm">✓ Studienkolleg Ready</div>
+                  <div className="text-white/80 mb-2">Language + University + Visa + Support</div>
+                  <div className="text-green-400 text-sm">✓ Complete German Journey</div>
                 </div>
                 <div className="text-white/80 absolute bottom-4 left-4">
                   $ <span className="animate-pulse">_</span>

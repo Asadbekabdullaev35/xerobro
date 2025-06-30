@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
             <h1 className="text-4xl font-bold mb-8 font-mono">Privacy Policy</h1>
             
             <p className="text-gray-300 mb-8">
-              StudienPrep ("we", "us" or "our") is committed to protecting your personal data privacy and security. This privacy policy explains how we collect, use and process your information when you use our services.
+              GermanPath ("we", "us" or "our") is committed to protecting your personal data privacy and security. This privacy policy explains how we collect, use and process your information when you use our services.
             </p>
 
             <p className="text-gray-300 mb-8">
@@ -56,11 +56,11 @@ const PrivacyPolicy = () => {
                 The data controller for the processing of your personal data is:
               </p>
               <p className="text-gray-300 mb-4">
-                StudienPrep<br />
-                Berlin, Germany
+                GermanPath<br />
+                Tashkent, Uzbekistan
               </p>
               <p className="text-gray-300 mb-4">
-                📧 Email: info@studienprep.com
+                📧 Email: info@germanpath.com
               </p>
             </section>
 
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
                 <li>Contact information: Name, email address, phone number</li>
-                <li>Educational information: Current education level, academic goals</li>
+                <li>Educational information: Current language level, academic goals</li>
                 <li>Service information: Information about the services you request</li>
                 <li>Communication data: Messages and correspondence with our team</li>
               </ul>
@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
                 We use the collected data for the following purposes:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-300">
-                <li>To provide educational services and support</li>
+                <li>To provide language learning and consulting services</li>
                 <li>To communicate with you about your progress and services</li>
                 <li>To improve our services and educational programs</li>
                 <li>To comply with legal requirements</li>
@@ -135,31 +135,17 @@ const PrivacyPolicy = () => {
                 To exercise any of these rights, please contact us at:
               </p>
               <p className="text-gray-300 mb-4">
-                📧 info@studienprep.com
+                📧 info@germanpath.com
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">6. Complaints</h2>
-              <p className="text-gray-300 mb-4">
-                If you believe your personal data is being processed unlawfully, you have the right to file a complaint with your local data protection authority.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">7. Changes to This Privacy Policy</h2>
-              <p className="text-gray-300 mb-4">
-                We reserve the right to update this privacy policy at any time. Updates will be posted on this page with a revised "Last updated" date.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">8. Contact Information</h2>
+              <h2 className="text-2xl font-bold mb-4">6. Contact Information</h2>
               <p className="text-gray-300 mb-4">
                 For questions or concerns regarding this privacy policy, please contact us at:
               </p>
               <p className="text-gray-300">
-                📧 info@studienprep.com
+                📧 info@germanpath.com
               </p>
             </section>
           </div>

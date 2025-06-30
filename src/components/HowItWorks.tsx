@@ -1,28 +1,28 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { Search, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
+import { UserPlus, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
   const [contentRef, contentVisible] = useIntersectionObserver<HTMLDivElement>();
 
   const steps = [
     {
-      icon: Search,
-      title: 'Assess',
-      description: 'Free diagnostic test in math and German',
-      details: 'We evaluate your current level and identify areas for improvement'
+      icon: UserPlus,
+      title: 'Enroll',
+      description: 'Choose language level & service tier',
+      details: 'Select your German proficiency level and the support package that fits your needs'
     },
     {
       icon: BookOpen,
-      title: 'Train',
-      description: 'Tailored coaching sessions and study materials',
-      details: 'Personalized learning plan with expert instructors and proven methods'
+      title: 'Prepare',
+      description: 'Language training & application prep',
+      details: 'Intensive German courses and comprehensive university application preparation'
     },
     {
       icon: GraduationCap,
-      title: 'Pass',
-      description: 'Guided application to Studienkolleg and beyond',
-      details: 'Complete support through exam success and university placement'
+      title: 'Succeed',
+      description: 'Visa, arrival & ongoing support',
+      details: 'Complete visa processing, arrival assistance, and continuous support in Germany'
     }
   ];
 
@@ -37,10 +37,10 @@ const HowItWorks = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-mono mb-6">
-              How It Works
+              Your Journey to Germany
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Our proven three-step process to Studienkolleg success
+              Our proven three-step process to German university success
             </p>
           </div>
 

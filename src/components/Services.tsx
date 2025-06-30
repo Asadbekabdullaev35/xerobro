@@ -1,62 +1,63 @@
 import React from 'react';
 import PageHeader from './PageHeader';
-import { Calculator, BookOpen, FileCheck, Plus, Users, Clock, Target, Award } from 'lucide-react';
+import { BookOpen, FileText, Home, MessageCircle, Users, Award, Clock, Globe } from 'lucide-react';
 
 const Services = () => {
   const coreServices = [
     {
-      icon: Calculator,
-      title: 'Math Exam Coaching',
-      description: 'Comprehensive mathematics preparation covering all Studienkolleg requirements',
-      features: [
-        'Algebra and Geometry fundamentals',
-        'Calculus and Functions',
-        'Statistics and Probability',
-        'Practice tests with detailed solutions',
-        'One-on-one tutoring sessions',
-        'Group study sessions'
-      ]
-    },
-    {
       icon: BookOpen,
-      title: 'German Language Training',
-      description: 'Complete German language preparation from basics to advanced academic level',
+      title: 'German Language Courses',
+      description: 'Comprehensive German language training from beginner to advanced levels',
       features: [
-        'Grammar and Syntax mastery',
-        'Academic vocabulary building',
-        'Reading comprehension strategies',
-        'Writing skills for academic success',
-        'Speaking and listening practice',
-        'Cultural context understanding'
+        'A1-A2 Foundation courses',
+        'B1-B2 Intermediate training',
+        'C1 Advanced preparation',
+        'Studienkolleg C-Test specific prep',
+        'One-on-one coaching sessions',
+        'Interactive learning materials',
+        'Progress tracking and assessment'
       ]
     },
     {
-      icon: FileCheck,
-      title: 'Mock Tests & Feedback',
-      description: 'Realistic exam simulations with comprehensive performance analysis',
+      icon: FileText,
+      title: 'University Applications',
+      description: 'Expert guidance through the entire German university application process',
       features: [
-        'Full-length practice exams',
-        'Detailed performance analysis',
-        'Personalized study recommendations',
-        'Progress tracking and monitoring',
-        'Weakness identification',
-        'Improvement strategies'
-      ]
-    }
-  ];
-
-  const bonusServices = [
-    {
-      icon: Plus,
-      title: 'University Application Support',
-      description: 'Complete assistance with university applications and document preparation',
-      features: [
-        'Document preparation and translation',
-        'Application form completion',
-        'University selection guidance',
+        'University selection consulting',
+        'Application document preparation',
+        'Personal statement writing',
         'Deadline management',
+        'Admission requirements guidance',
         'Interview preparation',
-        'Visa application support'
+        'Application status tracking'
+      ]
+    },
+    {
+      icon: Home,
+      title: 'Visa & Accommodation',
+      description: 'Complete support for visa processing and finding accommodation in Germany',
+      features: [
+        'Blocked account setup assistance',
+        'Health insurance arrangement',
+        'Student visa application support',
+        'Document preparation and translation',
+        'Housing search in German cities',
+        'Rental contract guidance',
+        'Arrival preparation checklist'
+      ]
+    },
+    {
+      icon: MessageCircle,
+      title: 'Ongoing Support',
+      description: 'Continuous assistance throughout your journey in Germany and Uzbekistan',
+      features: [
+        '24/7 chat support',
+        'Phone consultation sessions',
+        'In-person meetings in Tashkent',
+        'In-person support in Germany',
+        'Emergency assistance',
+        'Bureaucratic help (Anmeldung, etc.)',
+        'Cultural integration guidance'
       ]
     }
   ];
@@ -64,23 +65,23 @@ const Services = () => {
   const whyChooseUs = [
     {
       icon: Users,
-      title: 'Expert Instructors',
-      description: 'Former Studienkolleg instructors and native German speakers'
+      title: 'Expert Team',
+      description: 'Native German speakers and certified language instructors'
     },
     {
       icon: Award,
-      title: '95% Success Rate',
-      description: 'Proven track record with over 500 successful students'
+      title: '98% Success Rate',
+      description: 'Proven track record with over 1000 successful students'
     },
     {
       icon: Clock,
-      title: 'Flexible Scheduling',
-      description: 'Online and in-person classes that fit your schedule'
+      title: 'Flexible Support',
+      description: 'Online, in-person, and hybrid learning options'
     },
     {
-      icon: Target,
-      title: 'Personalized Approach',
-      description: 'Customized study plans based on your current level'
+      icon: Globe,
+      title: 'Complete Journey',
+      description: 'End-to-end support from language learning to settling in Germany'
     }
   ];
 
@@ -96,13 +97,13 @@ const Services = () => {
           {/* Core Services */}
           <section className="mb-20">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-mono">Core Services</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-mono">Complete German Journey Support</h1>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                Comprehensive preparation designed to maximize your chances of Studienkolleg admission
+                Everything you need from language learning to settling in Germany
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {coreServices.map((service, index) => (
                 <div 
                   key={index}
@@ -141,68 +142,12 @@ const Services = () => {
             </div>
           </section>
 
-          {/* Bonus Services */}
-          <section className="mb-20">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-mono">Additional Services</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                Optional services to support your complete journey to German universities
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              {bonusServices.map((service, index) => (
-                <div 
-                  key={index}
-                  className="group relative"
-                >
-                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/5 via-blue-500/5 to-transparent rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                  
-                  <div className="relative bg-black border border-white/10 rounded-lg p-8 transition-all duration-500 transform hover:scale-[1.02] hover:border-white/30 hover:shadow-lg hover:shadow-white/10">
-                    <div className="flex items-center justify-center mb-6">
-                      <div className="flex items-center space-x-3">
-                        <service.icon className="h-6 w-6 text-white" />
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent">
-                          {service.title}
-                        </h3>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center mb-8">
-                      <p className="text-gray-400 mb-6 max-w-3xl mx-auto">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {service.features.map((feature, featureIndex) => (
-                        <div 
-                          key={featureIndex} 
-                          className="flex items-start text-sm text-gray-400 group/feature"
-                        >
-                          <div className="h-1.5 w-1.5 rounded-full bg-white/50 mr-3 mt-2 flex-shrink-0 group-hover/feature:bg-white transition-colors" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="text-center mt-8">
-                      <div className="inline-block px-6 py-2 bg-white/10 rounded-full border border-white/20 text-white/80">
-                        Available as Add-on Service
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Why Choose Us */}
           <section>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-mono">Why Choose StudienPrep?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-mono">Why Choose GermanPath?</h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                What sets us apart in Studienkolleg preparation
+                What sets us apart in German language and university consulting
               </p>
             </div>
 
